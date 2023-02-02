@@ -10,6 +10,7 @@ This website is similar to the [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) w
 - [Builds page](#builds-page)
 - [Build page](#build-page)
 - [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
   - [Setting up environment variables for the website](#setting-up-environment-variables-for-the-website)
   - [Installing dependencies](#installing-dependencies)
   - [Running the website](#running-the-website)
@@ -41,11 +42,13 @@ You can also view the build page for a previous build with the build logs by cli
 
 To get started, you will need to have Node.js installed on your machine. You can download it from [here](https://nodejs.org/en/download/).
 
+### Prerequisites
+
 In order to run the website, you will need to have the [gatsby-websocket-api](https://github.com/martinholecekmax/gatsby-websocket-api) running on your machine. You can follow the instructions in the README to get it up and running.
 
 ### Setting up environment variables for the website
 
-The website uses environment variables to connect to the websocket API. You will need to create a `.env` file in the root of the project and add the following variable:
+The website uses environment variables to connect to the websocket API. You will need to either create a `.env` file in the root of the project or rename the `.env.example` file to `.env`. You will need to fill in the `REACT_APP_API_URL` variable with the URL of the websocket API. For example:
 
 ```
 REACT_APP_API_URL=http://localhost:3001
