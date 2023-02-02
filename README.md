@@ -27,13 +27,13 @@ This website is similar to the [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) w
 
 The builds page displays shows the status of the currently running build, as well as the status of the previous builds with some basic information about the build such as the duration, status, author, and date of the build execution.
 
-![Builds page](public/builds-page.png)
+![Builds page](https://github.com/martinholecekmax/gatsby-build-tracking-website/blob/master/public/builds-page.PNG)
 
 ## Build page
 
 The build page displays the status of the build as it is running. It also displays the logs of the build process.
 
-![Build page](public/build-page.png)
+![Build page](https://github.com/martinholecekmax/gatsby-build-tracking-website/blob/master/public/build-page.PNG)
 
 You can also view the build page for a previous build with the build logs by clicking on the view build in the builds page.
 
