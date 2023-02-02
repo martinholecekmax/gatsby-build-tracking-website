@@ -1,6 +1,8 @@
-# React website for Gatsby build tracking
+# Gatsby build tracking website in React
 
 This is a simple website that displays the status of the Gatsby build process. It is built with React and uses the websockets API to get the status of the build.
+
+This website is similar to the [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) website or the [Netlify](https://www.netlify.com/) website.
 
 ## Table of contents
 
@@ -72,3 +74,4 @@ This will start the website on port 3000. You can view the website by going to [
 ## Contributing
 
 If you would like to contribute to this project, please feel free to submit a pull request. If you have any questions, please feel free to open an issue.
+
