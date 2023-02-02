@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# React website for Gatsby build tracking
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple website that displays the status of the Gatsby build process. It is built with React and uses the websockets API to get the status of the build.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Builds page](#builds-page)
+- [Build page](#build-page)
+- [Getting started](#getting-started)
+  - [Setting up environment variables for the website](#setting-up-environment-variables-for-the-website)
+  - [Installing dependencies](#installing-dependencies)
+  - [Running the website](#running-the-website)
+- [Contributing](#contributing)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Displays the status of the currently running build
+- Displays the status of the previous builds
+- Displays the logs of the build process
+- Ability to add builds into the queue to process builds in order
+- Ability to cancel a build that is currently running or in the queue
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Builds page
 
-### `npm test`
+The builds page displays shows the status of the currently running build, as well as the status of the previous builds with some basic information about the build such as the duration, status, author, and date of the build execution.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Builds page](public/builds-page.png)
 
-### `npm run build`
+## Build page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The build page displays the status of the build as it is running. It also displays the logs of the build process.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Build page](public/build-page.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can also view the build page for a previous build with the build logs by clicking on the view build in the builds page.
 
-### `npm run eject`
+## Getting started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To get started, you will need to have Node.js installed on your machine. You can download it from [here](https://nodejs.org/en/download/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In order to run the website, you will need to have the [gatsby-websocket-api](https://github.com/martinholecekmax/gatsby-websocket-api) running on your machine. You can follow the instructions in the README to get it up and running.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Setting up environment variables for the website
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The website uses environment variables to connect to the websocket API. You will need to create a `.env` file in the root of the project and add the following variable:
 
-## Learn More
+```
+REACT_APP_API_URL=http://localhost:3001
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Note: You will need to change the URL to the URL of the websocket API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installing dependencies
 
-### Code Splitting
+To install the dependencies, run the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install
+```
 
-### Analyzing the Bundle Size
+### Running the website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To run the website, run the following command:
 
-### Making a Progressive Web App
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will start the website on port 3000. You can view the website by going to [http://localhost:3000](http://localhost:3000).
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you would like to contribute to this project, please feel free to submit a pull request. If you have any questions, please feel free to open an issue.

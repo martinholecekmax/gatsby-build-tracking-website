@@ -5,7 +5,7 @@ import { io } from 'socket.io-client';
 import BuildDetails from '../components/build-page/build-details/build-details';
 import BuildLogs from '../components/build-page/build-logs/build-logs';
 
-import styles from './build.module.css';
+import styles from './build-page.module.css';
 
 const Build = () => {
   const socket = io.connect(process.env.REACT_APP_API_URL);

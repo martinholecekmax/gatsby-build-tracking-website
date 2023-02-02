@@ -1,44 +1,27 @@
 import React, { useEffect, useState } from 'react';
-
 import io from 'socket.io-client';
-import axios from '../services/axios';
+import BuildCard from '../build-card/build-card';
 
-import BuildCard from '../components/builds-page/build-card';
+import axios from '../../../services/axios';
 
 import styles from './builds.module.css';
 
-const socket = io.connect(process.env.REACT_APP_API_URL);
-
 const Builds = () => {
+  const socket = io.connect(process.env.REACT_APP_API_URL);
   const [builds, setBuilds] = useState([]);
 
   const fetchBuilds = async () => {
-    const response = await axios.get('/builds');
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/builds`);
     console.log('response', response);
     setBuilds(response.data);
   };
 
-  const triggerBuild = async (clearCache = false) => {
-    const response = await axios.post(`/trigger-build`, {
-      clearCache,
-      authorName: 'Martin Holecek',
-      authorId: '1234567890',
-    });
-    console.log('response', response);
-  };
-
-  const onBuildTriggered = () => {
-    triggerBuild(false);
-  };
-
-  const onBuildTriggeredClear = () => {
-    triggerBuild(true);
-  };
-
   const onCancelBuild = async (buildId) => {
-    const response = await axios.get(`/cancel-build/${buildId}`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/cancel-build/${buildId}`
+    );
     console.log('response', response);
-    fetchBuilds();
+    // fetchBuilds();
   };
 
   useEffect(() => {
@@ -70,7 +53,7 @@ const Builds = () => {
         });
       }
     });
-  }, []);
+  }, [socket]);
 
   const buildList = builds.map((build) => {
     return (
@@ -78,28 +61,7 @@ const Builds = () => {
     );
   });
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.title}>Build History</div>
-        <div className={styles.buttons}>
-          <button
-            className={`btn ${styles.triggerButton}`}
-            onClick={onBuildTriggered}
-          >
-            Trigger build
-          </button>
-          <button
-            className={`btn  btn-success ${styles.clearButton}`}
-            onClick={onBuildTriggeredClear}
-          >
-            Clear cache
-          </button>
-        </div>
-      </div>
-      <div className={styles.content}>{buildList}</div>
-    </div>
-  );
+  return <div className={styles.container}>{buildList}</div>;
 };
 
 export default Builds;
