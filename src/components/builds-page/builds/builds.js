@@ -29,7 +29,7 @@ const Builds = () => {
   }, []);
 
   useEffect(() => {
-    socket.on('build-updated', (data) => {
+    socket.on('build-status', (data) => {
       const build = data?.payload;
       if (build) {
         setBuilds((prevBuilds) => {

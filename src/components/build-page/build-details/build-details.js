@@ -32,7 +32,7 @@ const BuildDetails = ({ id, socket }) => {
   }, [fetchBuild]);
 
   useEffect(() => {
-    socket.on('build-updated', (data) => {
+    socket.on('build-status', (data) => {
       console.log('data', data);
       const build = data?.payload;
       const belongsToBuild = id === data?.id;
