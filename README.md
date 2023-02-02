@@ -18,11 +18,11 @@ This website is similar to the [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) w
 
 ## Features
 
-- Displays the status of the currently running build
-- Displays the status of the previous builds
-- Displays the logs of the build process
-- Ability to add builds into the queue to process builds in order
-- Ability to cancel a build that is currently running or in the queue
+- Showing the status of the ongoing build
+- Providing the status of past builds
+- Presenting logs of the build process
+- Queuing builds for processing in order
+- Cancelling builds that are in progress or waiting in the queue.
 
 ## Builds page
 
@@ -77,4 +77,3 @@ This will start the website on port 3000. You can view the website by going to [
 ## Contributing
 
 If you would like to contribute to this project, please feel free to submit a pull request. If you have any questions, please feel free to open an issue.
-
